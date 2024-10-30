@@ -1,0 +1,368 @@
+/*
+* Style css for CQFS instances
+* @since 1.0.0
+*/
+/* loading/working/sending/busy animation */
+.cqfs-loader {
+    box-sizing: border-box;
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3498db;
+    width: 26px;
+    height: 26px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+}
+  
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* loading/working/sending/busy animation */
+
+.cqfs button.disabled{
+    background-color: #dddddd;
+    border-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* processing */
+.cqfs--navigation,
+.cqfs-submission 
+{
+    display: flex;
+    align-items: center;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.cqfs--navigation button,
+.cqfs-submission button{
+    margin: 5px;
+}
+.cqfs--navigation .cqfs-loader,
+.cqfs-submission .cqfs-loader
+{
+    margin: 0 10px;
+}
+
+/* utilities */
+.cqfs .show{
+    display: block;
+    opacity: 1;
+    transition: all linear 0.3s;
+}
+.cqfs .hide{
+    display: none;
+    opacity: 0;
+    transition: all linear 0.3s;
+}
+.cqfs-error{
+    border: 2px solid #dc3232;
+}
+.error-msg{
+    color: #dc3232;
+}
+
+/* cqfs object */
+.cqfs label{
+    display: inline;
+}
+.cqfs-user-form,
+.cqfs--questions .question
+{
+    margin: 30px 0;
+}
+.question--title {
+    font-size: 1.4em;
+}
+.cqfs--questions .question .input-wrap {
+    margin-bottom: 5px;
+}
+.cqfs--questions .question .input-wrap:last-child {
+    margin-bottom: 0;
+}
+.cqfs--questions .question .input-wrap label{
+    margin-left: 5px;
+}
+.cqfs-error-msg {
+    color: #dc3232;
+    margin: 15px 0;
+    background: white;
+    padding: 5px 15px;
+}
+
+.cqfs-user-form label, 
+.cqfs-user-form input[type="text"], 
+.cqfs-user-form input[type="email"] 
+{
+    display: block;
+    width: 100%;
+}
+
+.cqfs-user-form {
+    max-width: 600px;
+}
+
+.cqfs-user-form label {
+    margin: 20px 0 10px;
+}
+
+/*
+* CQFS Modal Styles
+*/
+/* The Modal (background) */
+.cqfs-modal {
+    position: fixed;
+    z-index: 100;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.cqfs-modal h3 {
+    font-size: 1.3em;
+}
+
+.cqfs-modal-body input[type="text"],
+.cqfs-modal-body input[type="email"],
+.cqfs-modal-body input[type="password"]
+{
+    margin-bottom: 20px;
+
+}
+  
+/* Modal Content */
+.cqfs-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.6s;
+    animation-name: animatetop;
+    animation-duration: 0.6s
+}
+
+@media (min-width: 768px){
+    .cqfs-modal-content {
+        width: calc(100vw - 50%);
+    }
+}
+  
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+  
+/* The Modal style */
+.cqfs-close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+  
+.cqfs-close:hover,
+.cqfs-close:focus {
+    color: #dddddd;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.cqfs-modal-header {
+    padding: 20px;
+    background-color: #23282d;
+    color: white;
+}
+
+.cqfs-modal-header h3{
+    color: #ffffff;
+    margin: 0;
+}
+  
+.cqfs-modal-body {
+    padding: 20px;
+}
+
+.cqfs-modal-body p{
+    margin: 0 0 20px;
+}
+.cqfs-modal-body p:last-child{
+    margin-bottom: 0;
+}
+
+.cqfs-alert-message{
+    margin-top: 20px;
+}
+
+.cqfs-alert-message.failed,
+.cqfs-alert-message.failed p,
+.cqfs-alert-message.failed span,
+.cqfs-alert-message.failed a
+{
+    color: #dc3232;
+}
+
+.cqfs-alert-message.success,
+.cqfs-alert-message.success p,
+.cqfs-alert-message.success span,
+.cqfs-alert-message.success a
+{
+    color: #46b450;
+}
+
+.cqfs-return-msg{
+    margin-top: 20px;
+}
+
+.cqfs-return-msg p:first-child{
+    margin-top: 0;
+}
+.cqfs-return-msg p:last-child{
+    margin-bottom: 0;
+}
+
+.cqfs-return-msg.success {
+    padding: 15px;
+    background: white;
+    border: 2px solid #46b450;
+}
+
+.cqfs-return-msg.failure {
+    padding: 15px;
+    background: white;
+    border: 2px solid #dc3232;
+}
+
+.cqfs-return-msg .cqfs-icon {
+    margin: 2px 5px 0 0;
+}
+
+.cqfs-icon.success-icon::before{
+    content: "\2714";
+    display:inline-block;
+    text-align: center;
+    color: white;
+    width:25px;
+    height:25px;
+    padding: 3px;
+    background: #46b450;
+    border-radius: 50%;
+    line-height:1;
+}
+
+.cqfs-icon.failure-icon::before{
+    content: "\2716";
+    display:inline-block;
+    text-align: center;
+    color: white;
+    width:25px;
+    height:25px;
+    padding: 3px;
+    background: #dc3232;
+    border-radius: 50%;
+    line-height:1;
+}
+  
+.cqfs-modal-footer {
+    padding: 20px;
+    font-size: 14px;
+    border-top: 1px solid #dddddd;
+}
+
+.cqfs-modal-footer p:last-child{
+    margin-bottom:0;
+}
+
+/* fadein, fadeout styles */
+.transition {
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+.display-none{
+    display: none !important;
+}
+.inline-block{
+    display: inline-block;
+}
+
+/* result page */
+.entry-content .cqfs-result {
+    display:block;
+    box-sizing:border-box;
+    width: 100%;
+    padding: 0 15px;
+    margin: 50px auto;
+}
+@media (min-width: 768px){
+    .entry-content .cqfs-result{
+        width: 768px;
+    }
+}
+.cqfs-entry-remarks{
+    margin-bottom: 30px;
+}
+.cqfs-msg{
+    padding: 15px;
+    border-radius: 4px;
+}
+.cqfs-msg p{
+    margin-bottom: 5px;
+}
+.cqfs-msg p:last-child{
+    margin-bottom: 0;
+}
+.passed{
+    background: #46b450;
+    color: #ffffff;
+}
+.failed{
+    background: #dc3232;
+    color: #ffffff;
+}
+.cqfs-entry-qa .cqfs-entry-qa__single:first-child{
+    padding-top: 0;
+}
+.cqfs-entry-qa .cqfs-entry-qa__single:last-child{
+    border-bottom: none;
+}
+.cqfs-entry-qa__single{
+    padding: 30px 0;
+    border-bottom: 1px solid #dddddd;
+}
+.cqfs-entry-qa__single h4{
+    font-size: 1.4em;
+    margin: 0 0 20px;
+}
+.cqfs-entry-qa__single label{
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+}
+.cqfs-entry-qa__single details p{
+    padding: 15px;
+    background: #dddddd;
+}
